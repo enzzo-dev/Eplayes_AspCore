@@ -11,9 +11,16 @@ namespace Eplayes_AspCore
 {
     public class Program
     {
-        List<Program> programa = new List<Program>();
+      public static void Main(string[] args)
+        {
+          CreateHostBuilder(args).Build().Run();
+        }
 
-
+          public static IHostBuilder CreateHostBuilder(string[] args) =>
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.UseStartup<Startup>();
                 });
     }
 }

@@ -1,3 +1,5 @@
+using System;
+
 namespace Eplayes_AspCore.Models
 {
     public class Partida

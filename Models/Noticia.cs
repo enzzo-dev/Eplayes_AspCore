@@ -11,6 +11,6 @@ namespace Eplayes_AspCore.Models
 
         public string Imagem { get; set; }
     
-    
+        
     }
 }

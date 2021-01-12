@@ -1,5 +1,5 @@
 using Eplayes_AspCore.Interfaces;
-using Sytem.IO;
+using System.IO;
 using System.Collections.Generic;
 
 namespace Eplayes_AspCore.Models
@@ -47,7 +47,7 @@ namespace Eplayes_AspCore.Models
 
                 novaEquipe.IdEquipe = int.Parse( linha[0]);
                 novaEquipe.Nome     = linha[1];
-                novaEquipe          = linha[2]; 
+                novaEquipe.Imagem   = linha[2]; 
 
                 equipes.Add(novaEquipe);  
             }
