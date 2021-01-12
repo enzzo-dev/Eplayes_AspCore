@@ -21,10 +21,9 @@ namespace Eplayes_AspCore.Controllers
             return View();
         }
 
-        [Route("Cadastrar")]
+    [Route("Cadastrar")]
         public IActionResult Cadastrar(IFormCollection form)
         {
-
             Equipe novaEquipe = new Equipe();
             novaEquipe.IdEquipe = Int32.Parse(form["IdEquipe"]);
             novaEquipe.Nome = form["Nome"];
