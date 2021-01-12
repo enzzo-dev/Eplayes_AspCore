@@ -14,6 +14,7 @@ namespace Eplayes_AspCore.Controllers
 
         Equipe equipeModel = new Equipe();
 
+        [Route("Listar")]
         public IActionResult Index()
         {
             ViewBag.Equipes = equipeModel.ReadAll();
@@ -35,7 +36,7 @@ namespace Eplayes_AspCore.Controllers
             //Atualiza a lista de equipes na View
             ViewBag.Equipes = equipeModel.ReadAll();
 
-            return LocalRedirect("~/Equipe");
+            return LocalRedirect("~/Equipe/Listar");
         }
     }
 }
