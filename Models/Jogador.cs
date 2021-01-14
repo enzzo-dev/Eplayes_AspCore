@@ -8,6 +8,7 @@ namespace Eplayes_AspCore.Models
 
         public int IdEquipe { get; set; }
         
-        
+        private const string PATH = "Database/Jogador.csv";
+  
     }
 }

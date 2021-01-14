@@ -45,7 +45,7 @@ namespace Eplayes_AspCore.Models
 
                 Equipe novaEquipe = new Equipe();
 
-                novaEquipe.IdEquipe = int.Parse( linha[0]);
+                novaEquipe.IdEquipe = int.Parse( linha[0] );
                 novaEquipe.Nome     = linha[1];
                 novaEquipe.Imagem   = linha[2]; 
 
@@ -82,7 +82,6 @@ namespace Eplayes_AspCore.Models
 
             RewriteCSV(PATH, linhas);
         }
-
-       
+   
     }
 }
