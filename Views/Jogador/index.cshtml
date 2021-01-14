@@ -12,7 +12,14 @@
     <input type="text" name="Nome">
 
     <label>Equipe</label>
-    <select name="IdEquipe"></select>
+    <select name="IdEquipe">
+
+        @foreach (Equipe equipes in Cadastrar())
+        {
+            <option></option>
+        }
+
+    </select>
 
     <button type="submit">Cadastrar</button>
     
