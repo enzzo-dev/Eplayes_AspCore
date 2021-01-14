@@ -35,6 +35,9 @@ namespace Eplayes_AspCore.Controllers
 
             //Verifica se o usuário selecionou um arquivo
 
+            Console.WriteLine(form.Files.Count);
+            
+
             if(form.Files.Count > 0)
             {
                 //Recebemos o arquivo que o usuário selecionou e armazenamos em uma variavel

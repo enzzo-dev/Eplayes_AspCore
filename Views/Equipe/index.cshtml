@@ -3,7 +3,7 @@
     ViewData["Title"] = "E-players - Equipes";
 }
 
-<form method="POST" action='@Url.Action("Cadastrar")'>
+<form method="POST" action='@Url.Action("Cadastrar")' enctype="multipart/form-data">
 
     <label>ID</label>
     <input type="text" name="IdEquipe">
@@ -33,7 +33,7 @@
                 
                 <td>@equipe.Nome</td>
 
-                <td><img src="wwwroot/img/Equipes/@equipe.Imagem" alt="Logo da equipe @equipe.Nome"></td>
+                <td><img src="/img/Equipes/@equipe.Imagem" alt="Logo da equipe @equipe.Nome" width="70"></td>
 
                 <td><a asp-area="Link para excluir alguma equipe" asp-controller="Equipe" asp-action="Excluir" asp-route-id="@equipe.IdEquipe">Excluir</a></td>
             </tr>
