@@ -1,87 +1,91 @@
-using Eplayes_AspCore.Interfaces;
-using System.IO;
+using System;
 using System.Collections.Generic;
+using System.IO;
+using Eplayes_AspCore.Interfaces;
 
 namespace Eplayes_AspCore.Models
 {
     public class Equipe : EplayersBase , IEquipe
     {
-        
         public int IdEquipe { get; set; }
-
         public string Nome { get; set; }
-
         public string Imagem { get; set; }
 
-        private const string PATH = "Database/Equipe.csv";
+        private const string PATH = "Database/equipe.csv";
 
+        /// <summary>
+        /// Método construtor que cria os arquivos e pastas caso não existam
+        /// </summary>
         public Equipe()
         {
             CreateFolderAndFile(PATH);
         }
 
-        public string Prepare(Equipe e)
+        /// <summary>
+        /// Adiciona uma Equipe ao CSV
+        /// </summary>
+        /// <param name="e"></param>
+        public void Create(Equipe e)
+        {
+            string[] linha = { PrepararLinha(e) };
+            File.AppendAllLines(PATH, linha);
+        }
+
+        /// <summary>
+        /// Prepara a linha para a estrutura do objeto Equipe
+        /// </summary>
+        /// <param name="e">Objeto "Equipe"</param>
+        /// <returns>Retorna a linha em formato de .csv</returns>
+        private string PrepararLinha(Equipe e)
         {
             return $"{e.IdEquipe};{e.Nome};{e.Imagem}";
         }
-        
-        public void Create(Equipe e)
-        {
-            string[] linhas = { Prepare(e) };
 
-            //Escrevemos linhas no arquivo csv
-            File.AppendAllLines(PATH, linhas);
+        /// <summary>
+        /// Exclui uma Equipe
+        /// </summary>
+        /// <param name="idEquipe"></param>
+        public void Delete(int idEquipe)
+        {
+            List<string> linhas = ReadAllLinesCSV(PATH);
+            // 1;FLA;fla.png
+            linhas.RemoveAll(x => x.Split(";")[0] == idEquipe.ToString());                        
+            RewriteCSV(PATH, linhas);
         }
 
+        /// <summary>
+        /// Lê todos as linhas do csv
+        /// </summary>
+        /// <returns>Lista de Equipes</returns>
         public List<Equipe> ReadAll()
         {
-
             List<Equipe> equipes = new List<Equipe>();
             string[] linhas = File.ReadAllLines(PATH);
 
-            foreach (string item in linhas)
+            foreach (var item in linhas)
             {
                 string[] linha = item.Split(";");
 
-                Equipe novaEquipe = new Equipe();
+                Equipe equipe = new Equipe();
+                equipe.IdEquipe = Int32.Parse(linha[0]);
+                equipe.Nome = linha[1];
+                equipe.Imagem = linha[2];
 
-                novaEquipe.IdEquipe = int.Parse( linha[0] );
-                novaEquipe.Nome     = linha[1];
-                novaEquipe.Imagem   = linha[2]; 
-
-                equipes.Add(novaEquipe);  
+                equipes.Add(equipe);
             }
-
-           return equipes;
-
+            return equipes;
         }
 
-
-        public void Update(Equipe equipeAlterada)
+        /// <summary>
+        /// Altera uma Equipe
+        /// </summary>
+        /// <param name="e">Equipe alterada</param>
+        public void Update(Equipe e)
         {
-            List<string> linhas = ReadAllLinesCSV(PATH); 
-
-            //Removemos as linhas com o código comparado.
-            linhas.RemoveAll(x => x.Split(";")[0] == equipeAlterada.IdEquipe.ToString());
-
-            linhas.Add( Prepare(equipeAlterada) );
-
-            RewriteCSV(PATH, linhas);
-
+            List<string> linhas = ReadAllLinesCSV(PATH);
+            linhas.RemoveAll(x => x.Split(";")[0] == e.IdEquipe.ToString());
+            linhas.Add( PrepararLinha(e) );                        
+            RewriteCSV(PATH, linhas); 
         }
-
-
-        public void Delete(int id)
-        {
-            List<string> linhas = ReadAllLinesCSV(PATH); 
-
-            //Removemos as linhas com o código comparado.
-            linhas.RemoveAll(x => x.Split(";")[0] == id.ToString());
-
-            
-
-            RewriteCSV(PATH, linhas);
-        }
-   
     }
 }

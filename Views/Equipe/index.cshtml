@@ -1,20 +1,32 @@
 @model Equipe
 @{
-    ViewData["Title"] = "E-players - Equipes";
+    ViewData["Title"] = "Equipes";
 }
 
-<form method="POST" action='@Url.Action("Cadastrar")' enctype="multipart/form-data">
+<div class="titulo_pagina">
+    <h1>Cadastro de @ViewData["Title"]</h1>
+</div>
 
-    <label>ID</label>
-    <input type="text" name="IdEquipe">
+<form  class="cadastro" method="POST" action='@Url.Action("Cadastrar")' method="post" enctype="multipart/form-data">
 
-    <label>Nome</label>
-    <input type="text" name="Nome">
+    <div class="campo">
+        <label>ID</label>
+        <input type="text" name="IdEquipe">
+    </div>
+    
+    <div class="campo">
+        <label>Nome</label>
+        <input type="text" name="Nome">
+    </div>
 
-    <label>Imagem</label>
-    <input type="file" name="Imagem">
+    <div class="campo">
+        <label>Imagem</label>
+        <input type="file" name="Imagem">
+    </div>
 
-    <button type="submit">Cadastrar</button>
+    <div class="campo">
+        <button type="submit">Cadastrar</button>
+    </div>
     
 </form>
 
