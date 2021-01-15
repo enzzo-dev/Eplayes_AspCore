@@ -13,50 +13,34 @@ namespace Eplayes_AspCore.Models
 
         private const string PATH = "Database/equipe.csv";
 
-        /// <summary>
-        /// Método construtor que cria os arquivos e pastas caso não existam
-        /// </summary>
+   
         public Equipe()
         {
             CreateFolderAndFile(PATH);
         }
 
-        /// <summary>
-        /// Adiciona uma Equipe ao CSV
-        /// </summary>
-        /// <param name="e"></param>
+       
         public void Create(Equipe e)
         {
             string[] linha = { PrepararLinha(e) };
             File.AppendAllLines(PATH, linha);
         }
 
-        /// <summary>
-        /// Prepara a linha para a estrutura do objeto Equipe
-        /// </summary>
-        /// <param name="e">Objeto "Equipe"</param>
-        /// <returns>Retorna a linha em formato de .csv</returns>
+       
         private string PrepararLinha(Equipe e)
         {
             return $"{e.IdEquipe};{e.Nome};{e.Imagem}";
         }
 
-        /// <summary>
-        /// Exclui uma Equipe
-        /// </summary>
-        /// <param name="idEquipe"></param>
-        public void Delete(int idEquipe)
+        public void Delete(int IdEquipe)
         {
             List<string> linhas = ReadAllLinesCSV(PATH);
             // 1;FLA;fla.png
-            linhas.RemoveAll(x => x.Split(";")[0] == idEquipe.ToString());                        
+            linhas.RemoveAll(x => x.Split(";")[0] == IdEquipe.ToString());                        
             RewriteCSV(PATH, linhas);
         }
 
-        /// <summary>
-        /// Lê todos as linhas do csv
-        /// </summary>
-        /// <returns>Lista de Equipes</returns>
+        
         public List<Equipe> ReadAll()
         {
             List<Equipe> equipes = new List<Equipe>();
