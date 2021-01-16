@@ -10,6 +10,7 @@
     padding: 0;
 }
 body{
+    width:100%;
     background-color: var(--background);
     font-family: 'Titillium Web','Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
 }
@@ -24,8 +25,8 @@ body{
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d5379b', endColorstr='#7277c3', GradientType=1 );
 }
 .container{
-    width: 80%;
-    max-width: 1200px;
+    width: 100%;
+    max-width: 1900px;
     margin: 0 auto;
 }
 
@@ -93,6 +94,7 @@ ul{
 .sobre .container{
     display: flex;
     justify-content: flex-start;
+    margin-left: 100px;
 }
 
 
@@ -106,8 +108,9 @@ ul{
 
 .champion{
     position: absolute;
-    right: 15%;
+    right: 10%;
     top: 450px;
+    height: 600px;
 }
 
 #horarios{
@@ -266,13 +269,15 @@ footer p{
     margin: auto;
     width: 100%;
     max-width: 440px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-transform: uppercase;
     box-shadow: 0px 2px 6px #000000, 0px -6px 15px rgba(114, 119, 195, 1);
     padding: 1.5em;
-    margin-bottom: 3em;
+    margin-bottom: 1.7em;
+    border-radius: 20px;
 }
 .campo{
     display: flex;
@@ -281,6 +286,13 @@ footer p{
     color: white;
     margin-bottom: 0.5em;
 }
+
+.campo > label{
+    margin-top: 20px;
+    font-size:18px;
+    margin-right: 10px;
+}
+
 fieldset{
     color: white;
 }
@@ -294,7 +306,7 @@ select{
     color: #ccc;
     border-bottom: 1px solid #474747;
     width: 60%;
-    padding: 0.5em;
+    padding: 0.9em;
 }
 input:focus, select:focus{
     outline: none;
@@ -306,11 +318,24 @@ input[type="date"]{
     text-align: center;
     font-size: 1.3em;
 }
+
+input[type="file"]{
+    margin-top:30px;
+   
+}
+
 .cadastro button{
-    border: none;
-    margin: 40px;
+    border: 1px solid rgb(219, 67, 224);
+    margin: 50px;
+    margin-top: 140px;
     width: 60%;
+    height:50px;
     cursor: pointer;
+    border-radius:15px;
+    color: white;
+    background-color:rgb(31, 30, 30);
+    font-size: 20px;
+
 }
 fieldset{
     border: none;
@@ -319,7 +344,7 @@ fieldset{
 }
 fieldset label{
     text-transform: none;
-    margin-right: 0.2em;
+    margin-right: 0.1em;
 }
 .termos{
     align-items: center;
@@ -347,7 +372,7 @@ table{
 }
 
 table td, table th{
-    border: solid 1px #7377C2;
+    border: solid 0.5px #7377C2;
     padding: 5px;
     text-align: center;
 }
@@ -468,6 +493,7 @@ table img{
     }
     .sobre .container div{
         width: 85%;
+        margin-left: 50px;
     }
     .sobre h1{
         text-align: center;
