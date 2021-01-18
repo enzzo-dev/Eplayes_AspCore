@@ -73,10 +73,16 @@ ul{
     text-transform: uppercase;
     padding: 8px 12px;
     border-radius: 5px;
+    margin: 0 20px;
 }
 
 .banner .btn{
     margin-top: 230px;
+}
+
+.erro{
+    color: var(--pink);
+    font-size:20px;
 }
 
 .sobre{
@@ -168,17 +174,18 @@ ul{
 }
 .noticias{
     width: 70%;
-    padding-right: 40px;
+    padding-right: 30px;
+    margin-left: 70px;
     display: flex;
     flex-flow: wrap;
 }
 .card{
-    width: 28%;
-    margin: 2%;
+    width: 19%;
+    margin: 3%;
     box-shadow: 0px 2px 6px #000000;
     background: rgb(0,0,0);
-background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(30,28,33,1) 35%, rgba(30,28,33,1) 
-100%);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(30,28,33,1) 35%, rgba(30,28,33,1) 
+    100%);
 }
 .card img{
     width: 100%;
@@ -204,7 +211,7 @@ background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(30,28,33,1) 35%, rgba(3
     text-align: center;
     box-shadow: 0px 2px 6px #000000;
     background: rgb(0,0,0);
-background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(30,28,33,1) 35%, rgba(30,28,33,1) 
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(30,28,33,1) 35%, rgba(30,28,33,1) 
 100%);
 }
 .placar{
@@ -233,7 +240,7 @@ footer .sociais{
 }
 footer .container{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 2em;
 }
 footer h5{
@@ -266,7 +273,7 @@ footer p{
     padding-top: 5em;
 }
 .cadastro{
-    margin: auto;
+    margin:  0 auto;
     width: 100%;
     max-width: 440px;
     height: 400px;
@@ -279,12 +286,48 @@ footer p{
     margin-bottom: 1.7em;
     border-radius: 20px;
 }
+
+.cadastro-jogador{
+    margin:  0 auto;
+    width: 100%;
+    max-width: 440px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase;
+    box-shadow: 0px 2px 6px #000000, 0px -6px 15px rgba(114, 119, 195, 1);
+    padding: 1.5em;
+    margin-bottom: 1.7em;
+    border-radius: 20px;
+}
+
+.cadastro-login{
+    margin:  0 auto;
+    width: 100%;
+    max-width: 440px;
+    height: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase;
+    box-shadow: 0px 2px 6px #000000, 0px -6px 15px rgba(114, 119, 195, 1);
+    padding: 1.5em;
+    margin-bottom: 1.7em;
+    border-radius: 10px;
+}
+
+.cadastro-login > label{
+    margin-top: 15px;
+}
+
+
 .campo{
     display: flex;
     justify-content: space-between;
     width: 100%;
     color: white;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.9em;
 }
 
 .campo > label{
@@ -307,6 +350,7 @@ select{
     border-bottom: 1px solid #474747;
     width: 60%;
     padding: 0.9em;
+    margin-top: 25px;
 }
 input:focus, select:focus{
     outline: none;
@@ -327,7 +371,7 @@ input[type="file"]{
 .cadastro button{
     border: 1px solid rgb(219, 67, 224);
     margin: 50px;
-    margin-top: 140px;
+    margin-top: 60px;
     width: 60%;
     height:50px;
     cursor: pointer;
@@ -337,6 +381,55 @@ input[type="file"]{
     font-size: 20px;
 
 }
+
+.cadastro-jogador > button{
+    border: 1px solid rgb(219, 67, 224);
+    margin: 50px;
+    margin-top: 60px;
+    width: 60%;
+    height:50px;
+    cursor: pointer;
+    border-radius:15px;
+    color: white;
+    background-color:rgb(31, 30, 30);
+    font-size: 20px;
+}
+
+.cadastro-jogador  textarea{
+    width: 285px;
+    height:150px;
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.cadastro-login > button{
+    border: 1px solid rgb(219, 67, 224);
+    margin: 50px;
+    margin-top: 60px;
+    width: 60%;
+    height:50px;
+    cursor: pointer;
+    border-radius:15px;
+    color: white;
+    background-color:rgb(31, 30, 30);
+    font-size: 20px;
+}
+
+.cadastro-noticias > button{
+    border: 1px solid rgb(219, 67, 224);
+    margin: 50px;
+    margin-top: 60px;
+    width: 60%;
+    height:50px;
+    cursor: pointer;
+    border-radius:15px;
+    color: white;
+    background-color:rgb(31, 30, 30);
+    font-size: 20px;
+}
+
 fieldset{
     border: none;
     padding: 1em;
@@ -415,7 +508,7 @@ table img{
     }
     .sobre .container div{
         width: 55%;
-        margin-left: 28px;
+        margin-right: 45px;
 
     }
     .ao_vivo{

@@ -78,3 +78,6 @@ C:\Users\FIC\Desktop\Eplayes_AspCore\obj\Debug\net5.0\Eplayes_AspCore.RazorTarge
 C:\Users\FIC\Desktop\Eplayes_AspCore\obj\Debug\net5.0\Eplayes_AspCore.Views.pdb
 C:\Users\FIC\Desktop\Eplayes_AspCore\obj\Debug\net5.0\Eplayes_AspCore.genruntimeconfig.cache
 C:\Users\FIC\Desktop\Eplayes_AspCore\obj\Debug\net5.0\Eplayes_AspCore.csproj.CopyComplete
+C:\Users\User\OneDrive\Área de Trabalho\Eplayes_AspCore\obj\Debug\net5.0\Razor\Views\Jogador\index.cshtml.g.cs
+C:\Users\User\OneDrive\Área de Trabalho\Eplayes_AspCore\obj\Debug\net5.0\Razor\Views\Login\index.cshtml.g.cs
+C:\Users\User\OneDrive\Área de Trabalho\Eplayes_AspCore\obj\Debug\net5.0\Razor\Views\Noticia\index.cshtml.g.cs

@@ -7,7 +7,7 @@
     <h1>Cadastro de @ViewData["Title"]</h1>
 </div>
 
-<form  class="cadastro" method="POST" action='@Url.Action("Cadastrar")' method="post" enctype="multipart/form-data">
+<form  class="cadastro" method="POST" action='@Url.Action("CadastrarEquipe")' method="post" enctype="multipart/form-data">
 
     <div class="campo">
         <label>ID :</label>
@@ -24,7 +24,7 @@
         <input type="file" name="Imagem">
     </div>
 
-        <button type="submit">Cadastrar</button>
+        <button class="gradient btn" type="submit">Cadastrar</button>
     
 </form>
 
@@ -33,6 +33,7 @@
         <th>ID:</th>
         <th>Nome:</th>
         <th>Foto:</th>
+        <th>Ações:</th>
     </thead>
     <tbody>
 
@@ -45,7 +46,10 @@
 
                 <td><img src="/img/Equipes/@equipe.Imagem" alt="Logo da equipe @equipe.Nome" width="70"></td>
 
-                <td><a asp-area="Link para excluir alguma equipe" asp-controller="Equipe" asp-action="Excluir" asp-route-id="@equipe.IdEquipe">Excluir</a></td>
+                <td><a asp-area="Link para excluir alguma equipe" asp-controller="Equipe" asp-action="Excluir" asp-route-id="@equipe.IdEquipe">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                </td>
             </tr>
         }
 
