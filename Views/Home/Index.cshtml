@@ -75,16 +75,16 @@
         <div class="container content">
             <section class="noticias">
 
-                  @* @foreach (Noticias item in ViewBag.Noticias)
-                 {
-                     <div class="card">
-                         <img src="~/img/Noticias/@item.Imagem">
-                         <div>
-                             <h4>@item.Titulo</h4>
-                             <p>@item.Texto</p>
-                         </div>
-                     </div>
-                 }  *@
+                @foreach (Noticia noticia in ViewBag.Noticias)
+                {
+                    <div class="cartoes">
+                        <img src="/img/Noticias/@noticia.Imagem">
+                        <div>
+                            <h4>@noticia.Titulo</h4>
+                            <p>@noticia.Texto</p>
+                        </div>
+                    </div>
+                }
                      
             </section>
             <section class="recentes" id="resultados">

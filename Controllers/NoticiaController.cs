@@ -15,8 +15,10 @@ namespace Eplayes_AspCore.Controllers
     {
         Noticia noticiaModel = new Noticia();
 
+
         public IActionResult Index()
         {
+            ViewBag.UserName = HttpContext.Session.GetString("_UserName");
             ViewBag.Noticias = noticiaModel.ReadAll();
             return View();
         }
@@ -24,6 +26,7 @@ namespace Eplayes_AspCore.Controllers
         [Route("CadastrarNoticia")]
         public IActionResult Cadastrar(IFormCollection form)
         {            
+            ViewBag.UserName = HttpContext.Session.GetString("_UserName");
             Noticia novaNoticia = new Noticia();
             novaNoticia.IdNoticia = Int32.Parse( form["IdNoticia"] );
             novaNoticia.Titulo = form["Titulo"];
@@ -61,6 +64,7 @@ namespace Eplayes_AspCore.Controllers
          [Route("Noticia/{id}")]
         public IActionResult Excluir(int id)
         {
+            ViewBag.UserName = HttpContext.Session.GetString("_UserName");
             noticiaModel.Delete(id);
             return LocalRedirect("~/Noticia");
         }

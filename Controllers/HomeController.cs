@@ -21,7 +21,9 @@ namespace Eplayes_AspCore.Controllers
 
         public IActionResult Index()
         {
-            ViewBag.UserName = HttpContext.Session.GetString("_UserName"); 
+            ViewBag.UserName = HttpContext.Session.GetString("_UserName");
+            Noticia noticiaModel = new Noticia();
+            ViewBag.Noticias = noticiaModel.ReadAll(); 
             return View();
         }
 
